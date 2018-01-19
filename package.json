@@ -6,7 +6,16 @@
     "request": "^2.83.0"
   },
   "devDependencies": {
-    "jest": "^22.1.4"
+    "eslint": "^4.15.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.7.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^22.1.4",
+    "prettier": "^1.10.2"
   },
   "scripts": {
     "test": "jest --watchAll"
@@ -17,5 +26,18 @@
     "image-captioning"
   ],
   "author": "Matt Morgis",
-  "license": "MIT"
+  "license": "MIT",
+  "prettier": {
+    "bracketSpacing": false,
+    "jsonEnable": [
+      "json"
+    ],
+    "javascriptEnable": [
+      "javascript",
+      "javascriptreact"
+    ],
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "tabWidth": 2
+  }
 }
