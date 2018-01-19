@@ -2,7 +2,9 @@
   "name": "ml-image-caption-bot",
   "version": "0.1.0",
   "description": "Takes a new post from Instagram, generates an image caption for it, and posts it to Twitter and Facebook.",
-  "main": "src/main.js",
+  "dependencies": {
+    "request": "^2.83.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
