@@ -1,0 +1,16 @@
+{
+  "name": "ml-image-caption-bot",
+  "version": "0.1.0",
+  "description": "Takes a new post from Instagram, generates an image caption for it, and posts it to Twitter and Facebook.",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "machine-learning",
+    "conginative-services",
+    "image-captioning"
+  ],
+  "author": "Matt Morgis",
+  "license": "MIT"
+}
