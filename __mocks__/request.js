@@ -669,7 +669,6 @@ const microsoftBody = {
 
 const request = (url, options, callback) => {
   const response = {statusCode: 200};
-  const {json} = options;
 
   if (url.includes('amazonaws')) {
     return callback(null, response, {mediaId: ''});
