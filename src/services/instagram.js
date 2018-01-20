@@ -1,6 +1,6 @@
 const async = require('async');
 const request = require('request');
-const {getLatestMediaId, saveLatestMediaId} = require('./s3');
+const {getLatestMediaId} = require('./s3');
 
 const INSTAGRAM_URL =
   'https://api.instagram.com/v1/users/self/media/recent/?access_token=' +
@@ -30,13 +30,9 @@ const getLatestInstagramURL = callback => {
         return callback(error);
       }
       const [mediaId, media] = results;
-      if (media.id !== mediaId) {
-        saveLatestMediaId(media.id, error => {
-          return callback(error, media);
-        });
-      } else {
-        return callback(null, null);
-      }
+      return media.id !== mediaId
+        ? callback(error, media)
+        : callback(null, null);
     }
   );
 };
