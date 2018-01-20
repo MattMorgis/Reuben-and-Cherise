@@ -76,7 +76,7 @@ const getLatestInstagramURL = callback => {
       },
     ],
     (error, data) => {
-      console.log(error);
+      if (error) console.log(error);
       return callback(error, data);
     }
   );
