@@ -670,15 +670,12 @@ const microsoftBody = {
 const request = (url, options, callback) => {
   const response = {statusCode: 200};
   const {json} = options;
-  console.log(json);
 
   if (url.includes('amazonaws')) {
-    console.log('s3');
     return callback(null, response, {mediaId: ''});
   }
 
   if (url.includes('microsoft')) {
-    console.log('microsoft');
     return callback(null, response, microsoftBody);
   }
 
