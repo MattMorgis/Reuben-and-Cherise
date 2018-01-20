@@ -43,12 +43,11 @@ const writeLatestInstagramId = (mediaId, callback) => {
 };
 
 const fetchLatestMedia = (latestUsedMediaId, callback) => {
-  request(INSTAGRAM_URL, null, (error, response, body) => {
+  request(INSTAGRAM_URL, {json: true}, (error, response, body) => {
     if (error) {
       console.log(error);
       return callback(error);
     }
-    body = JSON.parse(body);
     const latestMedia = body.data[4];
     const media =
       latestUsedMediaId !== latestMedia.id // TODO: Change this back
@@ -77,6 +76,7 @@ const getLatestInstagramURL = callback => {
       },
     ],
     (error, data) => {
+      console.log(error);
       return callback(error, data);
     }
   );

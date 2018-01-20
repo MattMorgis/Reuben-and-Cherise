@@ -667,14 +667,23 @@ const microsoftBody = {
   },
 };
 
-const response = {statusCode: 200};
-
 const request = (url, options, callback) => {
-  if (options && options.method === 'POST') {
-    console.log('here');
-    return callback(null, response, JSON.stringify(microsoftBody));
-  } else {
-    callback(null, response, JSON.stringify(instagramBody));
+  const response = {statusCode: 200};
+  const {json} = options;
+  console.log(json);
+
+  if (url.includes('amazonaws')) {
+    console.log('s3');
+    return callback(null, response, {mediaId: ''});
+  }
+
+  if (url.includes('microsoft')) {
+    console.log('microsoft');
+    return callback(null, response, microsoftBody);
+  }
+
+  if (url.includes('instagram')) {
+    return callback(null, response, instagramBody);
   }
 };
 
