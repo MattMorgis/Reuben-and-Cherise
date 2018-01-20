@@ -1,7 +1,7 @@
 const request = require('request');
 
-const getCaptionForImage = (imageURL, callback) => {
-  if (imageURL) {
+const getCaptionForImage = (media, callback) => {
+  if (media) {
     request(
       process.env.COGNITIVE_SERVICES_URL,
       {
@@ -10,7 +10,7 @@ const getCaptionForImage = (imageURL, callback) => {
         headers: {
           'Ocp-Apim-Subscription-Key': process.env.COGNITIVE_SERVICES_KEY,
         },
-        body: {url: imageURL},
+        body: {url: media.imageURL},
       },
       (error, response, body) => {
         if (error) console.log(error);
