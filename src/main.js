@@ -6,10 +6,16 @@ const async = require('async');
 const {getLatestInstagramURL} = require('./services/instagram');
 const {getCaptionForImage} = require('./services/cognitive');
 const {postCaptionToFacebook} = require('./services/facebook');
+const {postCaptionToTwitter} = require('./services/twitter');
 
 const lamda = (event, context, callback) => {
   async.waterfall(
-    [getLatestInstagramURL, getCaptionForImage, postCaptionToFacebook],
+    [
+      getLatestInstagramURL,
+      getCaptionForImage,
+      postCaptionToTwitter,
+      postCaptionToFacebook,
+    ],
     (error, result) => {
       if (!result)
         result =
