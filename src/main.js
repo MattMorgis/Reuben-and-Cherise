@@ -1,16 +1,15 @@
-// Setup ENV variables
 const dotenv = require('dotenv');
 dotenv.config();
 
 const async = require('async');
-const request = require('request');
 
 const {getLatestInstagramURL} = require('./services/instagram');
 const {getCaptionForImage} = require('./services/cognitive');
+const {postCaptionToFacebook} = require('./services/facebook');
 
 const lamda = (event, context, callback) => {
   async.waterfall(
-    [getLatestInstagramURL, getCaptionForImage],
+    [getLatestInstagramURL, getCaptionForImage, postCaptionToFacebook],
     (error, result) => {
       if (!result)
         result =

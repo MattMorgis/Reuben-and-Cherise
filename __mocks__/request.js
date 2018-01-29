@@ -681,6 +681,10 @@ const request = (url, options, callback) => {
   if (url.includes('instagram')) {
     return callback(null, response, instagramBody);
   }
+
+  if (url.includes('facebook')) {
+    return callback(null, response, {id: 234098320932098340982});
+  }
 };
 
 module.exports = request;

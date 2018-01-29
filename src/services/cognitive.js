@@ -16,8 +16,9 @@ const getCaptionForImage = (media, callback) => {
       },
       (error, response, body) => {
         if (error) console.log(error);
+        media.captions = body.description.captions;
         saveLatestMediaId(media.id, error => {
-          return callback(error, body.description.captions);
+          return callback(error, media);
         });
       }
     );
