@@ -12,6 +12,8 @@ It runs on [AWS Lambda](https://aws.amazon.com/lambda/)
 
 The project began with Reuben, a bot to handle posting caption for my personal photos. Each time I post a photo to my Instagram, Reuben will generate a caption and post the image and caption to my Twitter and Facebook.
 
+Example: [https://twitter.com/rappidmatt/status/957844021740736512](https://twitter.com/rappidmatt/status/957844021740736512)
+
 ## Cherise (TODO)
 
 Demoing this project requires posting to my personal Instagram account.
