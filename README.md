@@ -4,7 +4,7 @@
 
 This project is made up of two bots: **Reuben** and **Cherise**.
 
-It uses [Microsoft Azure's Cognitive Services](https://azure.microsoft.com/en-us/try/cognitive-services/) to generate a caption for an image and runs.
+It uses [Microsoft Azure's Cognitive Services](https://azure.microsoft.com/en-us/try/cognitive-services/) to generate a caption for an image.
 
 It runs on [AWS Lambda](https://aws.amazon.com/lambda/)
 
